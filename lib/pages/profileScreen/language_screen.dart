@@ -4,6 +4,8 @@ import 'package:startupkit/data/helper/countries_list.dart';
 import 'package:startupkit/general_widgets/simple_appbar.dart';
 import 'package:startupkit/models/county_list_model.dart';
 import 'package:startupkit/utils/colors.dart';
+import 'package:startupkit/utils/icons_path.dart';
+import 'package:startupkit/utils/start_up_kit_app_bar.dart';
 import 'package:startupkit/utils/typography.dart';
 
 class LanguageScreen extends StatefulWidget {
@@ -15,18 +17,25 @@ class LanguageScreen extends StatefulWidget {
 
 class _LanguageScreenState extends State<LanguageScreen> {
   final AppTextStyle appTextStyle = AppTextStyle();
-
   int selectIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.kWhite,
-      appBar: SimpleAppBar(title: 'Language', appTextStyle: appTextStyle),
-      body: SingleChildScrollView(
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Padding(
-            padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 43.h),
-            child: Text(
+      appBar: StartUpKitAppBar(
+        title: 'Language',
+        showAction: false,
+        backgroundColor: Colors.transparent,
+        titleColor: AppColor.kGrayscaleDark100,
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 43.h),
+            Text(
               'Suggested Languages',
               style: appTextStyle.kBMediumMedium.copyWith(
                 color: AppColor.kGrayscaleDark100,
@@ -34,58 +43,65 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 fontSize: 14.sp,
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 24.w, right: 15.w, top: 24.h),
-            child: SizedBox(
-              height: 700.h,
+            SizedBox(height: 24.h),
+            Expanded(
               child: ListView.builder(
                 padding: EdgeInsets.zero,
                 physics: const BouncingScrollPhysics(),
-                shrinkWrap: true,
                 itemCount: countriesList.length,
                 itemBuilder: (context, index) {
-                  CountriesList countries = countriesList[index];
-                  return Card(
-                    elevation: 0.3,
-                    color: selectIndex == index
-                        ? AppColor.kBackground
-                        : AppColor.kBackground2,
-                    child: ListTile(
-                      onTap: () {
-                        setState(() {
-                          selectIndex = index;
-                        });
-                      },
-                      contentPadding: EdgeInsets.only(left: 4.w),
-                      title: Text(
-                        countries.name,
-                        style: appTextStyle.kBMediumMedium.copyWith(
-                          color: AppColor.kGrayscaleDark100,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14.sp,
-                        ),
+                  CountriesList country = countriesList[index];
+                  bool isSelected = selectIndex == index;
+
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectIndex = index;
+                      });
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(bottom: 12.h),
+                      decoration: BoxDecoration(
+                        color: isSelected
+                            ? AppColor.kBackground
+                            : AppColor.kBackground2,
+                        borderRadius: BorderRadius.circular(8.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.05),
+                            blurRadius: 4.r,
+                            offset: Offset(0, 2.h),
+                          ),
+                        ],
                       ),
-                      trailing: SizedBox(
-                        width: 106.w,
-                        height: 36.h,
-                        child: selectIndex == index
+                      child: ListTile(
+                        contentPadding: EdgeInsets.symmetric(
+                          vertical: 8.h,
+                          horizontal: 16.w,
+                        ),
+                        title: Text(
+                          country.name,
+                          style: appTextStyle.kBMediumMedium.copyWith(
+                            color: AppColor.kGrayscaleDark100,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14.sp,
+                          ),
+                        ),
+                        trailing: isSelected
                             ? Icon(
-                                Icons.check,
-                                color: selectIndex == index
-                                    ? AppColor.kPrimary
-                                    : AppColor.kWhite,
-                                size: 18.sp,
-                              )
-                            : const SizedBox.shrink(),
+                          Icons.check,
+                          color: AppColor.kPrimary,
+                          size: 18.sp,
+                        )
+                            : null,
                       ),
                     ),
                   );
                 },
               ),
             ),
-          )
-        ]),
+          ],
+        ),
       ),
     );
   }

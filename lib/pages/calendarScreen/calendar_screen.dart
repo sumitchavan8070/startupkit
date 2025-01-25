@@ -1,4 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart' as cs ;
 import 'package:flutter/material.dart';
 import 'package:startupkit/data/helper/countries_list.dart';
 import 'package:startupkit/general_widgets/custom_appbar.dart';
@@ -20,7 +20,7 @@ class CalenderScreen extends StatefulWidget {
 class _CalenderScreenState extends State<CalenderScreen> {
   final AppTextStyle appTextStyle = AppTextStyle();
   var selectedDate = DateTime.now();
-  CarouselController calenderCarouselController = CarouselController();
+  final  calenderCarouselController = cs.CarouselController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

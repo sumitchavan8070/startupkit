@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:startupkit/data/const.dart';
 import 'package:startupkit/general_widgets/simple_appbar.dart';
 import 'package:startupkit/utils/colors.dart';
+import 'package:startupkit/utils/icons_path.dart';
+import 'package:startupkit/utils/start_up_kit_app_bar.dart';
 import 'package:startupkit/utils/typography.dart';
 
 class SecurityScreen extends StatefulWidget {
@@ -20,7 +22,13 @@ class _SecurityScreenState extends State<SecurityScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.kWhite,
-      appBar: SimpleAppBar(title: 'Security', appTextStyle: appTextStyle),
+      appBar: StartUpKitAppBar(
+        title: 'Security',
+        showAction: false,
+        actionIcon: AppIcons.kEditIcon,
+        backgroundColor: Colors.transparent,
+        titleColor: AppColor.kGrayscaleDark100,
+      ) ??  SimpleAppBar(title: 'Security', appTextStyle: appTextStyle),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         children: [

@@ -1,11 +1,10 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart' as cs;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:startupkit/data/helper/countries_list.dart';
 import 'package:startupkit/general_widgets/custom_appbar.dart';
 import 'package:startupkit/general_widgets/custom_carousel_slider.dart';
-import 'package:startupkit/models/county_list_model.dart';
 import 'package:startupkit/models/user_model.dart';
 import 'package:startupkit/pages/homeScreen/widgets/countryinfogrid.dart';
 import 'package:startupkit/pages/homeScreen/widgets/lessonrow_widget.dart';
@@ -21,7 +20,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final AppTextStyle appTextStyle = AppTextStyle();
-  CarouselController carouselController = CarouselController();
+  final carouselController = cs.CarouselController();
 
   @override
   Widget build(BuildContext context) {
@@ -53,14 +52,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisSpacing: 12,
               ),
               itemBuilder: (context, index) {
-                CountriesList countries = countriesList[index];
-                return InkWell(
+                final countries = countriesList[index];
+                return GestureDetector(
                   onTap: () {
                     // print(
                     //     'send to quiz screen country name ${countries.name.split('_')[0].toString()}');
-                    Get.to(() => QuizScreen(
-                          countryName: countries.name.split('_')[0].toString(),
-                        ));
+                    Get.to(() => QuizScreen(countryName: countries.name.split('_')[0].toString()));
                   },
                   child: CountryInfoGrid(countries: countries, appTextStyle: appTextStyle),
                 );

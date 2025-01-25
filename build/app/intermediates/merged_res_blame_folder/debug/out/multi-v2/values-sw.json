@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.startupkit.app-mergeDebugResources-25:/values-sw/values-sw.xml",
+            "outputFile": "com.example.startupkit.app-mergeDebugResources-30:/values-sw/values-sw.xml",
             "map": [
                 {
-                    "source": "/home/user/.gradle/caches/transforms-3/2f6a5506f4dac22f7ab67b13b215ea43/transformed/core-1.13.1/res/values-sw/values-sw.xml",
+                    "source": "/home/user/.gradle/caches/transforms-3/54a4cfbaad86b9ab2273ca8263e4a153/transformed/core-1.13.1/res/values-sw/values-sw.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/user/.gradle/caches/transforms-3/9b241b1a4aa793385fe3c2435b299777/transformed/jetified-exoplayer-ui-2.17.1/res/values-sw/values-sw.xml",
+                    "source": "/home/user/.gradle/caches/transforms-3/6fa63dc7c934992a761e0a923c774fb6/transformed/jetified-exoplayer-ui-2.17.1/res/values-sw/values-sw.xml",
                     "from": {
                         "startLines": "2,11,15,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "/home/user/.gradle/caches/transforms-3/9b96ff00da8faaf6ae24bff52e0e559e/transformed/jetified-media3-exoplayer-1.4.0/res/values-sw/values-sw.xml",
+                    "source": "/home/user/.gradle/caches/transforms-3/43f951d8440f6151d58c805f1ae23aef/transformed/jetified-media3-exoplayer-1.4.0/res/values-sw/values-sw.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

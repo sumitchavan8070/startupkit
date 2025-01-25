@@ -18,11 +18,18 @@ import 'package:startupkit/utils/colors.dart';
 import 'package:startupkit/utils/images_path.dart';
 import 'package:startupkit/utils/typography.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   SignInScreen({super.key});
-  TextEditingController emailC = TextEditingController();
-  TextEditingController passwordC = TextEditingController();
-  final AppTextStyle appTextStyle = AppTextStyle();
+
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+  final TextEditingController emailC = TextEditingController();
+
+  final TextEditingController passwordC = TextEditingController();
+   AppTextStyle? appTextStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -35,62 +42,76 @@ class SignInScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: SizedBox(
-            width: 327.w,
-            child: Column(children: [
-              WelcomeBackCard(appTextStyle: appTextStyle),
-              SizedBox(
-                height: 36.h,
-              ),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            children: [
+            SizedBox(
+            width: 248.w,
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Hi, Welcome Back! 👋',
+                    textAlign: TextAlign.center,
+                    style: appTextStyle?.kH5SemiBoldTextstyle.copyWith(
+                        color: AppColor.kGrayscaleDark100, fontSize: 20.sp),
+                  ),
+                  SizedBox(
+                    height: 8.h,
+                  ),
+                  Text(
+                    'We happy to see you. Sign In to your account',
+                    textAlign: TextAlign.center,
+                    style: appTextStyle?.kBMediumMedium.copyWith(
+                        color: AppColor.kGrayscale40, fontSize: 14.sp),
+                  )
+                ]),
+          ),
+              const SizedBox(height: 36),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Email',
-                    style: appTextStyle.kBMediumMedium.copyWith(
-                        color: AppColor.kGrayscaleDark100,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp),
+                    style: TextStyle(
+                      color: AppColor.kGrayscaleDark100,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
+                    ),
                   ),
-                  SizedBox(
-                    height: 8.h,
-                  ),
+                  const SizedBox(height: 8),
                   PrimaryTextFormField(
-                      borderRadius: BorderRadius.circular(24.r),
-                      hintText: 'sdchavan8070@gmail.com',
-                      controller: emailC,
-                      width: 327.w,
-                      height: 52.h)
+                    borderRadius: BorderRadius.circular(24),
+                    hintText: 'sdchavan8070@gmail.com',
+                    controller: emailC,
+                    width: double.infinity,
+                    height: 52,
+                  ),
                 ],
               ),
-              SizedBox(
-                height: 16.h,
-              ),
+              const SizedBox(height: 16),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Password',
-                    style: appTextStyle.kBMediumMedium.copyWith(
-                        color: AppColor.kGrayscaleDark100,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp),
+                    style: TextStyle(
+                      color: AppColor.kGrayscaleDark100,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
+                    ),
                   ),
-                  SizedBox(
-                    height: 8.h,
-                  ),
+                  const SizedBox(height: 8),
                   PasswordTextField(
-                      borderRadius: BorderRadius.circular(24.r),
-                      hintText: 'Password',
-                      controller: passwordC,
-                      width: 327.w,
-                      height: 52.h)
+                    borderRadius: BorderRadius.circular(24),
+                    hintText: 'Password',
+                    controller: passwordC,
+                    width: double.infinity,
+                    height: 52,
+                  ),
                 ],
               ),
-              SizedBox(
-                height: 16.h,
-              ),
+              const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -99,16 +120,15 @@ class SignInScreen extends StatelessWidget {
                       Get.to(() => ForgotPasswordScreen());
                     },
                     title: 'Forgot Password?',
-                    textStyle: appTextStyle.kBSmallMedium.copyWith(
-                        color: AppColor.kPrimary,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12.sp),
-                  )
+                    textStyle: TextStyle(
+                      color: AppColor.kPrimary,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12,
+                    ),
+                  ),
                 ],
               ),
-              SizedBox(
-                height: 32.h,
-              ),
+              const SizedBox(height: 32),
               Column(
                 children: [
                   PrimaryButton(
@@ -118,59 +138,50 @@ class SignInScreen extends StatelessWidget {
                     },
                     text: 'LogIn',
                     bgColor: AppColor.kPrimary,
-                    borderRadius: 20.r,
-                    height: 46.h,
-                    width: 327.w,
+                    borderRadius: 20,
+                    height: 46,
+                    width: double.infinity,
                     textColor: AppColor.kWhite,
-                    fontSize: 14.sp,
+                    fontSize: 14,
                   ),
-                  SizedBox(
-                    height: 24.h,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 4.w),
-                    child: CustomRichText(
-                      title: 'Don’t have an account?',
-                      subtitle: ' Create here',
-                      onTab: () {
-                        Get.off(() =>   SignUpScreen());
-                      },
-                      subtitleTextStyle: appTextStyle.kBMediumMedium.copyWith(
-                          color: AppColor.kPrimary,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14.sp),
+                  const SizedBox(height: 24),
+                  CustomRichText(
+                    title: 'Don’t have an account?',
+                    subtitle: ' Create here',
+                    onTab: () {
+                      Get.off(() => SignUpScreen());
+                    },
+                    subtitleTextStyle: TextStyle(
+                      color: AppColor.kPrimary,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
                     ),
-                  )
+                  ),
                 ],
               ),
-              SizedBox(
-                height: 32.h,
-              ),
+              const SizedBox(height: 32),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 45.w),
+                padding: const EdgeInsets.symmetric(horizontal: 45.0),
                 child: Column(
                   children: [
                     DividerRow(title: 'Or Sign In with'),
-                    SizedBox(
-                      height: 24.h,
-                    ),
+                    const SizedBox(height: 24),
                     SecondaryButton(
-                        height: 56.h,
-                        textColor: AppColor.kGrayscaleDark100,
-                        width: 280.w,
-                        onTap: () {},
-                        borderRadius: 24,
-                        bgColor: AppColor.kBackground.withOpacity(0.3),
-                        text: 'Continue with Google',
-                        icons: ImagesPath.kGoogleIcon),
+                      height: 56,
+                      textColor: AppColor.kGrayscaleDark100,
+                      width: double.infinity,
+                      onTap: () {},
+                      borderRadius: 24,
+                      bgColor: AppColor.kBackground.withOpacity(0.3),
+                      text: 'Continue with Google',
+                      icons: ImagesPath.kGoogleIcon,
+                    ),
                   ],
                 ),
               ),
-              SizedBox(
-                height: 50.h,
-              ),
+              const SizedBox(height: 50),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40.w),
+                padding: const EdgeInsets.symmetric(horizontal: 40.0),
                 child: TermsAndPrivacyText(
                   title1: '  By signing up you agree to our',
                   title2: ' Terms ',
@@ -178,10 +189,8 @@ class SignInScreen extends StatelessWidget {
                   title4: ' Conditions of Use',
                 ),
               ),
-              SizedBox(
-                height: 24.h,
-              ),
-            ]),
+              const SizedBox(height: 24),
+            ],
           ),
         ),
       ),

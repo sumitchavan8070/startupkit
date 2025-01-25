@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:startupkit/general_widgets/Dialogs/logoutdialog.dart';
 import 'package:startupkit/general_widgets/primarytextbutton.dart';
@@ -15,6 +14,7 @@ import 'package:startupkit/pages/profileScreen/widgets/progressinfobox.dart';
 import 'package:startupkit/utils/colors.dart';
 import 'package:startupkit/utils/icons_path.dart';
 import 'package:startupkit/utils/images_path.dart';
+import 'package:startupkit/utils/start_up_kit_app_bar.dart';
 import 'package:startupkit/utils/typography.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -26,49 +26,15 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.kBackground,
-      appBar: AppBar(
-        centerTitle: true,
-        actions: [
-          GestureDetector(
-            onTap: () {
-              Get.to(() => EditScreen());
-            },
-            child: Container(
-              width: 40.w,
-              height: 40.h,
-              decoration: BoxDecoration(shape: BoxShape.circle, color: AppColor.kWhite),
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 8.w),
-                child: SvgPicture.asset(AppIcons.kEditIcon),
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 10.w,
-          ),
-        ],
-        title: Text(
-          'Edit Profile',
-          style: appTextStyle.kBMediumSemiBold.copyWith(
-              color: AppColor.kGrayscaleDark100, fontWeight: FontWeight.bold, fontSize: 14.sp),
-        ),
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 16),
-          child: Container(
-            width: 40.w,
-            height: 40.h,
-            decoration: BoxDecoration(shape: BoxShape.circle, color: AppColor.kWhite),
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 8.w),
-              child: Icon(
-                Icons.arrow_back_ios,
-                color: AppColor.kGrayscaleDark100,
-              ),
-            ),
-          ),
-        ),
-        elevation: 0,
+      appBar: StartUpKitAppBar(
+        title: 'Edit Profile',
+
+        onActionTap: () {
+          Get.to(() => const EditScreen());
+        },
+        actionIcon: AppIcons.kEditIcon,
         backgroundColor: Colors.transparent,
+        titleColor: AppColor.kGrayscaleDark100,
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -96,7 +62,7 @@ class ProfileScreen extends StatelessWidget {
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             padding: EdgeInsets.zero,
-            physics: const  BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             children: [
               Padding(
                 padding: EdgeInsets.only(
@@ -122,7 +88,7 @@ class ProfileScreen extends StatelessWidget {
                       icons: AppIcons.kSettingIcon,
                       title: 'Settings',
                       onTab: () {
-                        Get.to(() => SecurityScreen());
+                        Get.to(() => const SecurityScreen());
                       },
                     ),
                     SizedBox(
@@ -133,7 +99,7 @@ class ProfileScreen extends StatelessWidget {
                       icons: AppIcons.kNotification,
                       title: 'Notification',
                       onTab: () {
-                        Get.to(() => NotificationsScreen());
+                        Get.to(() => const NotificationsScreen());
                       },
                     ),
                     SizedBox(
@@ -155,7 +121,7 @@ class ProfileScreen extends StatelessWidget {
                       icons: AppIcons.kGlobal,
                       title: 'Language',
                       onTab: () {
-                        Get.to(() => LanguageScreen());
+                        Get.to(() => const LanguageScreen());
                       },
                     ),
                     SizedBox(
@@ -180,7 +146,6 @@ class ProfileScreen extends StatelessWidget {
                         Get.to(() => const HelpAndSupportScreen());
                       },
                     ),
-
                     SizedBox(
                       height: 24.h,
                     ),

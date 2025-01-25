@@ -82,7 +82,7 @@ class LogOutDialog extends StatelessWidget {
               ),
               PrimaryTextButton(
                 onPressed: () {
-                  Get.off(() => SignInScreen());
+                  Get.offAll(() => SignInScreen());
                 },
                 title: 'Log Out',
                 textStyle: appTextStyle.kBLargeSemiBold.copyWith(

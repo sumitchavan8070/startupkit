@@ -1,33 +1,38 @@
-com.example.startupkit.app-core-runtime-2.2.0-0 /home/user/.gradle/caches/transforms-3/0f877a570394a12cc35ff27489f11c26/transformed/core-runtime-2.2.0/res
-com.example.startupkit.app-jetified-window-java-1.0.0-beta04-1 /home/user/.gradle/caches/transforms-3/2a215381204751055df81b6269e717b7/transformed/jetified-window-java-1.0.0-beta04/res
-com.example.startupkit.app-core-1.13.1-2 /home/user/.gradle/caches/transforms-3/2f6a5506f4dac22f7ab67b13b215ea43/transformed/core-1.13.1/res
-com.example.startupkit.app-lifecycle-livedata-2.6.2-3 /home/user/.gradle/caches/transforms-3/4ac619b9deba4a1fa8987b5cd7ce3b2f/transformed/lifecycle-livedata-2.6.2/res
-com.example.startupkit.app-jetified-startup-runtime-1.1.1-4 /home/user/.gradle/caches/transforms-3/69635902d600ff315c2d2b7f75af662f/transformed/jetified-startup-runtime-1.1.1/res
-com.example.startupkit.app-lifecycle-livedata-core-2.6.2-5 /home/user/.gradle/caches/transforms-3/6aee316721cde10eee602b1ec4b1a4a6/transformed/lifecycle-livedata-core-2.6.2/res
-com.example.startupkit.app-lifecycle-runtime-2.6.2-6 /home/user/.gradle/caches/transforms-3/7628447021ddaf60af1b9170edc954e9/transformed/lifecycle-runtime-2.6.2/res
-com.example.startupkit.app-jetified-activity-1.9.1-7 /home/user/.gradle/caches/transforms-3/84f9a2a8e90bc49cea8eb6f83b8fa2e7/transformed/jetified-activity-1.9.1/res
-com.example.startupkit.app-jetified-lifecycle-viewmodel-savedstate-2.6.2-8 /home/user/.gradle/caches/transforms-3/9284d5dbf531e8af2d4296bbf056c51a/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.2/res
-com.example.startupkit.app-jetified-savedstate-1.2.1-9 /home/user/.gradle/caches/transforms-3/93b9d15e098df96a93b7a4fb1262fd3b/transformed/jetified-savedstate-1.2.1/res
-com.example.startupkit.app-jetified-exoplayer-ui-2.17.1-10 /home/user/.gradle/caches/transforms-3/9b241b1a4aa793385fe3c2435b299777/transformed/jetified-exoplayer-ui-2.17.1/res
-com.example.startupkit.app-jetified-media3-exoplayer-1.4.0-11 /home/user/.gradle/caches/transforms-3/9b96ff00da8faaf6ae24bff52e0e559e/transformed/jetified-media3-exoplayer-1.4.0/res
-com.example.startupkit.app-lifecycle-viewmodel-2.6.2-12 /home/user/.gradle/caches/transforms-3/b44e82f04ca2fbbb378f070b4fb3afd1/transformed/lifecycle-viewmodel-2.6.2/res
-com.example.startupkit.app-jetified-core-ktx-1.13.1-13 /home/user/.gradle/caches/transforms-3/b977d140845cfa8829de711262a9ed75/transformed/jetified-core-ktx-1.13.1/res
-com.example.startupkit.app-jetified-annotation-experimental-1.4.0-14 /home/user/.gradle/caches/transforms-3/bd9b8afb5ccab932cf8ed25b1b7c2f57/transformed/jetified-annotation-experimental-1.4.0/res
-com.example.startupkit.app-jetified-exoplayer-core-2.17.1-15 /home/user/.gradle/caches/transforms-3/c399573162ff9817fecd8644cebabf1d/transformed/jetified-exoplayer-core-2.17.1/res
-com.example.startupkit.app-recyclerview-1.2.1-16 /home/user/.gradle/caches/transforms-3/c89c9e19d01ec8e18ae20a4faed97721/transformed/recyclerview-1.2.1/res
-com.example.startupkit.app-jetified-profileinstaller-1.3.1-17 /home/user/.gradle/caches/transforms-3/e852edee255e4ba7fa4d5b58ba237ddb/transformed/jetified-profileinstaller-1.3.1/res
-com.example.startupkit.app-jetified-window-1.0.0-beta04-18 /home/user/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/res
-com.example.startupkit.app-media-1.4.3-19 /home/user/.gradle/caches/transforms-3/f5b4dd84a5ece42e8140ab4c7601339d/transformed/media-1.4.3/res
-com.example.startupkit.app-debug-20 /home/user/Documents/projects/Flutter Projects/boilerplate/TEST/startupkit/android/app/src/debug/res
-com.example.startupkit.app-main-21 /home/user/Documents/projects/Flutter Projects/boilerplate/TEST/startupkit/android/app/src/main/res
-com.example.startupkit.app-pngs-22 /home/user/Documents/projects/Flutter Projects/boilerplate/TEST/startupkit/build/app/generated/res/pngs/debug
-com.example.startupkit.app-resValues-23 /home/user/Documents/projects/Flutter Projects/boilerplate/TEST/startupkit/build/app/generated/res/resValues/debug
-com.example.startupkit.app-rs-24 /home/user/Documents/projects/Flutter Projects/boilerplate/TEST/startupkit/build/app/generated/res/rs/debug
-com.example.startupkit.app-mergeDebugResources-25 /home/user/Documents/projects/Flutter Projects/boilerplate/TEST/startupkit/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
-com.example.startupkit.app-mergeDebugResources-26 /home/user/Documents/projects/Flutter Projects/boilerplate/TEST/startupkit/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
-com.example.startupkit.app-merged_res-27 /home/user/Documents/projects/Flutter Projects/boilerplate/TEST/startupkit/build/app/intermediates/merged_res/debug
-com.example.startupkit.app-packaged_res-28 /home/user/Documents/projects/Flutter Projects/boilerplate/TEST/startupkit/build/audio_waveforms/intermediates/packaged_res/debug
-com.example.startupkit.app-packaged_res-29 /home/user/Documents/projects/Flutter Projects/boilerplate/TEST/startupkit/build/flutter_plugin_android_lifecycle/intermediates/packaged_res/debug
-com.example.startupkit.app-packaged_res-30 /home/user/Documents/projects/Flutter Projects/boilerplate/TEST/startupkit/build/image_picker_android/intermediates/packaged_res/debug
-com.example.startupkit.app-packaged_res-31 /home/user/Documents/projects/Flutter Projects/boilerplate/TEST/startupkit/build/path_provider_android/intermediates/packaged_res/debug
-com.example.startupkit.app-packaged_res-32 /home/user/Documents/projects/Flutter Projects/boilerplate/TEST/startupkit/build/video_player_android/intermediates/packaged_res/debug
+com.example.startupkit.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-0 /home/user/.gradle/caches/transforms-3/0ffbdfcadb71e0a9d41ca802b28f6974/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/res
+com.example.startupkit.app-lifecycle-livedata-core-2.7.0-1 /home/user/.gradle/caches/transforms-3/1561fead4024f9b9cdee719f01bdb430/transformed/lifecycle-livedata-core-2.7.0/res
+com.example.startupkit.app-media-1.4.3-2 /home/user/.gradle/caches/transforms-3/16e5467abdf31659c3a3d6bb259babba/transformed/media-1.4.3/res
+com.example.startupkit.app-jetified-core-1.0.0-3 /home/user/.gradle/caches/transforms-3/1c5f6db43d131463afca7e0462ec6152/transformed/jetified-core-1.0.0/res
+com.example.startupkit.app-core-runtime-2.2.0-4 /home/user/.gradle/caches/transforms-3/2874df0f81244a83e147dc16d9c51e26/transformed/core-runtime-2.2.0/res
+com.example.startupkit.app-jetified-window-java-1.2.0-5 /home/user/.gradle/caches/transforms-3/3ef162224f371787e5c8dc68312129f9/transformed/jetified-window-java-1.2.0/res
+com.example.startupkit.app-jetified-media3-exoplayer-1.4.0-6 /home/user/.gradle/caches/transforms-3/43f951d8440f6151d58c805f1ae23aef/transformed/jetified-media3-exoplayer-1.4.0/res
+com.example.startupkit.app-core-1.13.1-7 /home/user/.gradle/caches/transforms-3/54a4cfbaad86b9ab2273ca8263e4a153/transformed/core-1.13.1/res
+com.example.startupkit.app-jetified-activity-1.9.1-8 /home/user/.gradle/caches/transforms-3/598efeff9890275b032702599bd017d0/transformed/jetified-activity-1.9.1/res
+com.example.startupkit.app-jetified-lifecycle-livedata-core-ktx-2.7.0-9 /home/user/.gradle/caches/transforms-3/6da0e15fe277d03192fadf049fb88f55/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/res
+com.example.startupkit.app-jetified-profileinstaller-1.3.1-10 /home/user/.gradle/caches/transforms-3/6ea3fe485a2777491d24973851e37227/transformed/jetified-profileinstaller-1.3.1/res
+com.example.startupkit.app-jetified-exoplayer-ui-2.17.1-11 /home/user/.gradle/caches/transforms-3/6fa63dc7c934992a761e0a923c774fb6/transformed/jetified-exoplayer-ui-2.17.1/res
+com.example.startupkit.app-jetified-startup-runtime-1.1.1-12 /home/user/.gradle/caches/transforms-3/72d73aa9f2b0d4a60d769cc82fe58f41/transformed/jetified-startup-runtime-1.1.1/res
+com.example.startupkit.app-recyclerview-1.2.1-13 /home/user/.gradle/caches/transforms-3/793819cabdfe4628c2cf4776a9e974ae/transformed/recyclerview-1.2.1/res
+com.example.startupkit.app-lifecycle-viewmodel-2.7.0-14 /home/user/.gradle/caches/transforms-3/7b93728c23c58fb4966a93fd781d42c6/transformed/lifecycle-viewmodel-2.7.0/res
+com.example.startupkit.app-lifecycle-runtime-2.7.0-15 /home/user/.gradle/caches/transforms-3/8968819bfcadfd25d9ed1488e55fb43d/transformed/lifecycle-runtime-2.7.0/res
+com.example.startupkit.app-fragment-1.7.1-16 /home/user/.gradle/caches/transforms-3/902e93687bfec424d7d681c16d78dd10/transformed/fragment-1.7.1/res
+com.example.startupkit.app-jetified-core-ktx-1.13.1-17 /home/user/.gradle/caches/transforms-3/a374ebd3eb9aca2cfd2e4d2ed2f0ed1b/transformed/jetified-core-ktx-1.13.1/res
+com.example.startupkit.app-jetified-window-1.2.0-18 /home/user/.gradle/caches/transforms-3/ac5ea9a8b6fd31385d98c2d53414b07d/transformed/jetified-window-1.2.0/res
+com.example.startupkit.app-jetified-tracing-1.2.0-19 /home/user/.gradle/caches/transforms-3/b6393f1bc40143c1a43b027ef1bf8c49/transformed/jetified-tracing-1.2.0/res
+com.example.startupkit.app-jetified-annotation-experimental-1.4.0-20 /home/user/.gradle/caches/transforms-3/bbfbfcd66d57b964cd3d944ae6910e1b/transformed/jetified-annotation-experimental-1.4.0/res
+com.example.startupkit.app-lifecycle-livedata-2.7.0-21 /home/user/.gradle/caches/transforms-3/c8104be4ee8049739ee8a5cef3e0da67/transformed/lifecycle-livedata-2.7.0/res
+com.example.startupkit.app-jetified-exoplayer-core-2.17.1-22 /home/user/.gradle/caches/transforms-3/cc3c246836cd26a5af9455efd5574628/transformed/jetified-exoplayer-core-2.17.1/res
+com.example.startupkit.app-jetified-savedstate-1.2.1-23 /home/user/.gradle/caches/transforms-3/e31bf8eb61c587fe74f52284c4da4d09/transformed/jetified-savedstate-1.2.1/res
+com.example.startupkit.app-jetified-lifecycle-process-2.7.0-24 /home/user/.gradle/caches/transforms-3/f278e58515e8cfd3d9ddee03ef955ede/transformed/jetified-lifecycle-process-2.7.0/res
+com.example.startupkit.app-debug-25 /home/user/Documents/projects/Flutter Projects/startupkit/android/app/src/debug/res
+com.example.startupkit.app-main-26 /home/user/Documents/projects/Flutter Projects/startupkit/android/app/src/main/res
+com.example.startupkit.app-pngs-27 /home/user/Documents/projects/Flutter Projects/startupkit/build/app/generated/res/pngs/debug
+com.example.startupkit.app-resValues-28 /home/user/Documents/projects/Flutter Projects/startupkit/build/app/generated/res/resValues/debug
+com.example.startupkit.app-rs-29 /home/user/Documents/projects/Flutter Projects/startupkit/build/app/generated/res/rs/debug
+com.example.startupkit.app-mergeDebugResources-30 /home/user/Documents/projects/Flutter Projects/startupkit/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.example.startupkit.app-mergeDebugResources-31 /home/user/Documents/projects/Flutter Projects/startupkit/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.example.startupkit.app-merged_res-32 /home/user/Documents/projects/Flutter Projects/startupkit/build/app/intermediates/merged_res/debug
+com.example.startupkit.app-packaged_res-33 /home/user/Documents/projects/Flutter Projects/startupkit/build/audio_waveforms/intermediates/packaged_res/debug
+com.example.startupkit.app-packaged_res-34 /home/user/Documents/projects/Flutter Projects/startupkit/build/flutter_plugin_android_lifecycle/intermediates/packaged_res/debug
+com.example.startupkit.app-packaged_res-35 /home/user/Documents/projects/Flutter Projects/startupkit/build/image_picker_android/intermediates/packaged_res/debug
+com.example.startupkit.app-packaged_res-36 /home/user/Documents/projects/Flutter Projects/startupkit/build/path_provider_android/intermediates/packaged_res/debug
+com.example.startupkit.app-packaged_res-37 /home/user/Documents/projects/Flutter Projects/startupkit/build/video_player_android/intermediates/packaged_res/debug

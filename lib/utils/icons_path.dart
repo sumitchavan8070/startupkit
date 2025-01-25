@@ -36,4 +36,6 @@ class AppIcons {
   static String kListening = 'assets/icons/Ear.svg';
   static String kLock = 'assets/icons/Lock.svg';
   static String kCrown = 'assets/icons/crown.svg';
+  static String kBack = 'assets/icons/back.svg';
+
 }

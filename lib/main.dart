@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           useInheritedMediaQuery: true,
           title: 'StartUpKit',
           theme: ThemeData(
-            scaffoldBackgroundColor: AppColor.kBackground,
+            scaffoldBackgroundColor: AppColor.appBg,
             primaryColor: AppColor.kPrimary,
             fontFamily: 'Poppins',
             useMaterial3: true,

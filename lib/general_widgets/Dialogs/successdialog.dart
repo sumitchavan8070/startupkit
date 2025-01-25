@@ -65,7 +65,7 @@ class SuccessDialog extends StatelessWidget {
             PrimaryButton(
               elevation: 0,
               onTap: () {
-                Get.off(() => SignInScreen());
+                Get.offAll(() => SignInScreen());
               },
               text: 'Continue',
               bgColor: AppColor.kPrimary,

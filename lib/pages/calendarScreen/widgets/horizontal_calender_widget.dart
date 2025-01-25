@@ -1,6 +1,6 @@
 library horizontal_week_calendar;
 
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart' as cs ;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -97,7 +97,7 @@ class HorizontalWeekCalendar extends StatefulWidget {
 }
 
 class _HorizontalWeekCalendarState extends State<HorizontalWeekCalendar> {
-  CarouselController carouselController = CarouselController();
+  cs.CarouselController carouselController = cs.CarouselController();
 
   DateTime today = DateTime.now();
   DateTime selectedDate = DateTime.now();
@@ -214,7 +214,7 @@ final AppTextStyle appTextStyle = AppTextStyle();
               const SizedBox(
                 height: 12,
               ),
-              CarouselSlider(
+              cs.CarouselSlider(
                 carouselController: carouselController,
                 items: [
                   if (listOfWeeks.isNotEmpty)
@@ -358,7 +358,7 @@ final AppTextStyle appTextStyle = AppTextStyle();
                         ),
                       ),
                 ],
-                options: CarouselOptions(
+                options: cs.CarouselOptions(
                   scrollPhysics: const ClampingScrollPhysics(),
                   height: boxHeight,
                   viewportFraction: 1,

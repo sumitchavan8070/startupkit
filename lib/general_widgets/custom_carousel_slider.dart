@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide CarouselController;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:startupkit/data/helper/countries_list.dart';
@@ -183,25 +183,25 @@ class CustomCarouselSlider extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 9.h),
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: DotsIndicator(
-                          dotsCount: countriesList.length - 36,
-                          position: index,
-                          decorator: DotsDecorator(
-                            color: AppColor.kPrimary.withOpacity(0.4),
-                            size: const Size.square(8.0),
-                            activeSize: const Size(20.0, 8.0),
-                            activeShape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5.r),
-                            ),
-                            activeColor: AppColor.kPrimary,
-                          ),
-                        ),
-                      ),
-                    )
+                    // Padding(
+                    //   padding: EdgeInsets.only(top: 9.h),
+                    //   child: Align(
+                    //     alignment: Alignment.bottomCenter,
+                    //     child: DotsIndicator(
+                    //       dotsCount: countriesList.length - 36,
+                    //       position: index,
+                    //       decorator: DotsDecorator(
+                    //         color: AppColor.kPrimary.withOpacity(0.4),
+                    //         size: const Size.square(8.0),
+                    //         activeSize: const Size(20.0, 8.0),
+                    //         activeShape: RoundedRectangleBorder(
+                    //           borderRadius: BorderRadius.circular(5.r),
+                    //         ),
+                    //         activeColor: AppColor.kPrimary,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // )
                   ],
                 ),
               )),

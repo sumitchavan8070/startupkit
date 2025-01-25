@@ -37,10 +37,12 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
     return Container(
       width: widget.width,
       height: widget.height,
+      clipBehavior: Clip.hardEdge,
+
       decoration: BoxDecoration(
           borderRadius: widget.borderRadius,
           color: AppColor.kBackground2,
-          border: Border.all(color: AppColor.kLine)),
+          border: Border.all(color: Colors.white)),
       child: TextFormField(
           obscureText: _obscureText,
           controller: widget.controller,

@@ -1,7 +1,6 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:startupkit/data/const.dart';
 import 'package:startupkit/general_widgets/passwordtextfield.dart';
@@ -19,17 +18,27 @@ import 'package:startupkit/utils/colors.dart';
 import 'package:startupkit/utils/images_path.dart';
 import 'package:startupkit/utils/typography.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   SignUpScreen({super.key});
 
-  TextEditingController firstName = TextEditingController();
-  TextEditingController listName = TextEditingController();
-  TextEditingController emailC = TextEditingController();
-  TextEditingController passwordC = TextEditingController();
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  final TextEditingController firstName = TextEditingController();
+
+  final TextEditingController lastName = TextEditingController();
+
+  final TextEditingController emailC = TextEditingController();
+
+  final TextEditingController passwordC = TextEditingController();
   final AppTextStyle appTextStyle = AppTextStyle();
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
       backgroundColor: AppColor.kWhite,
       appBar: AppBar(
@@ -40,61 +49,54 @@ class SignUpScreen extends StatelessWidget {
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: SizedBox(
-            width: 327.w,
-            child: Column(children: [
-              CreateAccountCard(appTextStyle: appTextStyle),
-              NameInputFields(appTextStyle: appTextStyle, firstName: firstName, listName: listName),
-              SizedBox(
-                height: 15.h,
-              ),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            children: [
+              CreateAccountCard(appTextStyle: appTextStyle,),
+              NameInputFields(firstName: firstName,  appTextStyle: appTextStyle, listName: lastName,),
+              const SizedBox(height: 15),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Email',
-                    style: appTextStyle.kBMediumMedium.copyWith(
-                        color: AppColor.kGrayscaleDark100,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp),
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: AppColor.kGrayscaleDark100,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                  SizedBox(height: 7.h),
+                  const SizedBox(height: 7),
                   PrimaryTextFormField(
-                      borderRadius: BorderRadius.circular(24.r),
-                      hintText: 'sdchavan8070@gmail.com',
-                      controller: emailC,
-                      width: 327.w,
-                      height: 52.h)
+                    borderRadius: BorderRadius.circular(24),
+                    hintText: 'sdchavan8070@gmail.com',
+                    controller: emailC,
+                    width: double.infinity,
+                    height: 52,
+                  ),
                 ],
               ),
-              SizedBox(
-                height: 15.h,
-              ),
+              const SizedBox(height: 15),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Password',
-                    style: appTextStyle.kBMediumMedium.copyWith(
-                        color: AppColor.kGrayscaleDark100,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp),
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: AppColor.kGrayscaleDark100,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                  SizedBox(
-                    height: 8.h,
-                  ),
+                  const SizedBox(height: 8),
                   PasswordTextField(
-                      borderRadius: BorderRadius.circular(24.r),
-                      hintText: 'Password',
-                      controller: passwordC,
-                      width: 327.w,
-                      height: 52.h)
+                    borderRadius: BorderRadius.circular(24),
+                    hintText: 'Password',
+                    controller: passwordC,
+                    width: double.infinity,
+                    height: 52,
+                  ),
                 ],
               ),
-              SizedBox(
-                height: 28.h,
-              ),
+              const SizedBox(height: 28),
               Column(
                 children: [
                   PrimaryButton(
@@ -104,58 +106,51 @@ class SignUpScreen extends StatelessWidget {
                     },
                     text: 'Create Account',
                     bgColor: AppColor.kPrimary,
-                    borderRadius: 20.r,
-                    height: 46.h,
-                    width: 327.w,
+                    borderRadius: 20,
+                    height: 46,
+                    width: double.infinity,
                     textColor: AppColor.kWhite,
                   ),
-                  SizedBox(
-                    height: 20.h,
-                  ),
+                  const SizedBox(height: 20),
                   CustomRichText(
                     title: 'Already have an account? ',
                     subtitle: 'Log In',
                     onTab: () {
                       Get.off(() => SignInScreen());
                     },
-                    subtitleTextStyle: appTextStyle.kBMediumMedium.copyWith(
-                        color: AppColor.kGrayscaleDark100,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp),
-                  )
+                    subtitleTextStyle: theme.textTheme.bodyMedium!.copyWith(
+                      color: AppColor.kGrayscaleDark100,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ],
               ),
-              SizedBox(
-                height: 30.h,
-              ),
+              const SizedBox(height: 30),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40.w),
+                padding: const EdgeInsets.symmetric(horizontal: 40.0),
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.w),
+                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
                       child: DividerRow(title: 'Or Sign Up with'),
                     ),
-                    SizedBox(
-                      height: 24.h,
-                    ),
+                    const SizedBox(height: 24),
                     SecondaryButton(
-                        height: 56.h,
-                        textColor: AppColor.kGrayscaleDark100,
-                        width: 260.w,
-                        onTap: () {},
-                        borderRadius: 24,
-                        bgColor: AppColor.kBackground.withOpacity(0.3),
-                        text: 'Continue with Google',
-                        icons: ImagesPath.kGoogleIcon),
+                      height: 56,
+                      textColor: AppColor.kGrayscaleDark100,
+                      width: double.infinity,
+                      onTap: () {},
+                      borderRadius: 24,
+                      bgColor: AppColor.kBackground.withOpacity(0.3),
+                      text: 'Continue with Google',
+                      icons: ImagesPath.kGoogleIcon,
+                    ),
                   ],
                 ),
               ),
-              SizedBox(
-                height: 23.h,
-              ),
+              const SizedBox(height: 23),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40.w),
+                padding: const EdgeInsets.symmetric(horizontal: 40.0),
                 child: TermsAndPrivacyText(
                   title1: '  By signing up you agree to our',
                   title2: ' Terms ',
@@ -163,7 +158,7 @@ class SignUpScreen extends StatelessWidget {
                   title4: ' Conditions of Use',
                 ),
               ),
-            ]),
+            ],
           ),
         ),
       ),

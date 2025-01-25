@@ -4,6 +4,8 @@ import 'package:startupkit/data/helper/countries_list.dart';
 import 'package:startupkit/general_widgets/simple_appbar.dart';
 import 'package:startupkit/models/county_list_model.dart';
 import 'package:startupkit/utils/colors.dart';
+import 'package:startupkit/utils/icons_path.dart';
+import 'package:startupkit/utils/start_up_kit_app_bar.dart';
 import 'package:startupkit/utils/typography.dart';
 
 class NotificationsScreen extends StatefulWidget {
@@ -22,7 +24,13 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.kBackground,
-      appBar: SimpleAppBar(title: 'Notifications', appTextStyle: appTextStyle),
+      appBar: StartUpKitAppBar(
+        title: 'Notifications',
+        showAction: false,
+        actionIcon: AppIcons.kEditIcon,
+        backgroundColor: Colors.transparent,
+        titleColor: AppColor.kGrayscaleDark100,
+      )  ?? SimpleAppBar(title: 'Notifications', appTextStyle: appTextStyle),
       body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(

@@ -11,6 +11,7 @@
   </string-array>
     <attr format="color" name="ad_marker_color"/>
     <attr format="dimension" name="ad_marker_width"/>
+    <attr format="color" name="animationBackgroundColor"/>
     <attr format="boolean" name="animation_enabled"/>
     <attr format="boolean" name="auto_show"/>
     <attr format="color" name="backgroundTint"/>
@@ -22,6 +23,28 @@
     <attr format="color" name="buffered_color"/>
     <attr format="reference" name="controller_layout_id"/>
     <attr format="reference" name="default_artwork"/>
+    <attr format="enum" name="finishPrimaryWithPlaceholder">
+        
+        <enum name="always" value="1"/>
+        
+        <enum name="adjacent" value="2"/>
+    </attr>
+    <attr format="enum" name="finishPrimaryWithSecondary">
+        
+        <enum name="never" value="0"/>
+        
+        <enum name="always" value="1"/>
+        
+        <enum name="adjacent" value="2"/>
+    </attr>
+    <attr format="enum" name="finishSecondaryWithPrimary">
+        
+        <enum name="never" value="0"/>
+        
+        <enum name="always" value="1"/>
+        
+        <enum name="adjacent" value="2"/>
+    </attr>
     <attr format="boolean" name="hide_during_ads"/>
     <attr format="boolean" name="hide_on_touch"/>
     <attr format="boolean" name="keep_content_on_player_reset"/>
@@ -62,12 +85,32 @@
     <attr format="boolean" name="show_vr_button"/>
     <attr format="color" name="shutter_background_color"/>
     <attr format="enum" name="splitLayoutDirection">
+        
         <enum name="locale" value="0"/>
+        
         <enum name="ltr" value="1"/>
+        
         <enum name="rtl" value="2"/>
+        
+        <enum name="topToBottom" value="3"/>
+        
+        <enum name="bottomToTop" value="4"/>
     </attr>
-    <attr format="dimension" name="splitMinSmallestWidth"/>
-    <attr format="dimension" name="splitMinWidth"/>
+    <attr format="float" name="splitMaxAspectRatioInLandscape">
+        
+        <enum name="alwaysAllow" value="0"/>
+        
+        <enum name="alwaysDisallow" value="-1"/>
+    </attr>
+    <attr format="float" name="splitMaxAspectRatioInPortrait">
+        
+        <enum name="alwaysAllow" value="0"/>
+        
+        <enum name="alwaysDisallow" value="-1"/>
+    </attr>
+    <attr format="integer" name="splitMinHeightDp"/>
+    <attr format="integer" name="splitMinSmallestWidthDp"/>
+    <attr format="integer" name="splitMinWidthDp"/>
     <attr format="float" name="splitRatio"/>
     <attr format="enum" name="surface_type">
     <enum name="none" value="0"/>
@@ -76,6 +119,7 @@
     <enum name="spherical_gl_surface_view" value="3"/>
     <enum name="video_decoder_gl_surface_view" value="4"/>
   </attr>
+    <attr format="string" name="tag"/>
     <attr format="integer" name="time_bar_min_update_interval"/>
     <attr format="dimension" name="touch_target_height"/>
     <attr format="color" name="unplayed_color"/>
@@ -283,11 +327,13 @@
     <item name="exo_subtitles" type="id"/>
     <item name="exo_time" type="id"/>
     <item name="exo_vr" type="id"/>
+    <item name="fragment_container_view_tag" type="id"/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
     <item name="line1" type="id"/>
     <item name="line3" type="id"/>
     <item name="media_controller_compat_view_tag" type="id"/>
     <item name="report_drawn" type="id"/>
+    <item name="special_effects_controller_view_tag" type="id"/>
     <item name="tag_accessibility_actions" type="id"/>
     <item name="tag_accessibility_clickable_spans" type="id"/>
     <item name="tag_accessibility_heading" type="id"/>
@@ -308,6 +354,7 @@
     <id name="view_tree_on_back_pressed_dispatcher_owner"/>
     <id name="view_tree_saved_state_registry_owner"/>
     <id name="view_tree_view_model_store_owner"/>
+    <item name="visible_removing_fragment_view_tag" type="id"/>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="exo_media_button_opacity_percentage_disabled">33</integer>
     <integer name="exo_media_button_opacity_percentage_enabled">100</integer>
@@ -578,6 +625,7 @@
     <declare-styleable name="ActivityRule">
         
         <attr format="boolean" name="alwaysExpand"/>
+        <attr name="tag"/>
     </declare-styleable>
     <declare-styleable name="AspectRatioFrameLayout">
     <attr name="resize_mode"/>
@@ -667,6 +715,15 @@
         <attr name="android:fontWeight"/>
         <attr name="android:fontVariationSettings"/>
         <attr name="android:ttcIndex"/>
+    </declare-styleable>
+    <declare-styleable name="Fragment">
+        <attr name="android:name"/>
+        <attr name="android:id"/>
+        <attr name="android:tag"/>
+    </declare-styleable>
+    <declare-styleable name="FragmentContainerView">
+        <attr name="android:name"/>
+        <attr name="android:tag"/>
     </declare-styleable>
     <declare-styleable name="GradientColor">
         
@@ -799,23 +856,34 @@
     </declare-styleable>
     <declare-styleable name="SplitPairRule">
         
-        <attr format="boolean" name="finishPrimaryWithSecondary"/>
-        
-        <attr format="boolean" name="finishSecondaryWithPrimary"/>
-        
         <attr format="boolean" name="clearTop"/>
+        <attr name="finishPrimaryWithSecondary"/>
+        <attr name="finishSecondaryWithPrimary"/>
         <attr name="splitRatio"/>
-        <attr name="splitMinWidth"/>
-        <attr name="splitMinSmallestWidth"/>
+        <attr name="splitMinWidthDp"/>
+        <attr name="splitMinHeightDp"/>
+        <attr name="splitMinSmallestWidthDp"/>
+        <attr name="splitMaxAspectRatioInPortrait"/>
+        <attr name="splitMaxAspectRatioInLandscape"/>
         <attr name="splitLayoutDirection"/>
+        <attr name="tag"/>
+        <attr name="animationBackgroundColor"/>
     </declare-styleable>
     <declare-styleable name="SplitPlaceholderRule">
         
         <attr format="string" name="placeholderActivityName"/>
+        
+        <attr format="boolean" name="stickyPlaceholder"/>
+        <attr name="finishPrimaryWithPlaceholder"/>
         <attr name="splitRatio"/>
-        <attr name="splitMinWidth"/>
-        <attr name="splitMinSmallestWidth"/>
+        <attr name="splitMinWidthDp"/>
+        <attr name="splitMinHeightDp"/>
+        <attr name="splitMinSmallestWidthDp"/>
+        <attr name="splitMaxAspectRatioInPortrait"/>
+        <attr name="splitMaxAspectRatioInLandscape"/>
         <attr name="splitLayoutDirection"/>
+        <attr name="tag"/>
+        <attr name="animationBackgroundColor"/>
     </declare-styleable>
     <declare-styleable name="StyledPlayerControlView">
     <attr name="show_timeout"/>

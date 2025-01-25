@@ -5,6 +5,8 @@ class AppColor {
   //
   static const Color alabaster = Color(0xFFF9FAFC);
   static const Color stormGrey = Color(0xFF697386);
+  static const appBg = Color(0xFFF8F8F8);
+
 
 
 

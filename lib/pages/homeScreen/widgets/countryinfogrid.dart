@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:startupkit/data/helper/countries_list.dart';
 import 'package:startupkit/general_widgets/customtrack_shape.dart';
-
 import 'package:startupkit/models/county_list_model.dart';
 import 'package:startupkit/utils/colors.dart';
 import 'package:startupkit/utils/typography.dart';
@@ -20,6 +18,7 @@ class CountryInfoGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 400, // Direct height value
+      padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 4),
       decoration: BoxDecoration(
         color: AppColor.kWhite,
         borderRadius: BorderRadius.circular(25), // Removed .r
@@ -28,13 +27,29 @@ class CountryInfoGrid extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 10, left: 11), // Removed .h and .w
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: CircleAvatar(
-                radius: 20, // Removed .r
-                backgroundImage: NetworkImage(countries.flag),
-              ),
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                ClipOval(
+                  child: Image.network(
+                    countries.flag,
+                    width: 24.0, // Adjust the width to your preferred size
+                    height: 24.0, // Adjust the height to your preferred size
+                    fit: BoxFit.cover, // Ensures the image fits within the circular shape
+                  ),
+                ),
+                const SizedBox(width: 4),
+                Flexible(
+                  child: Text(
+                    countries.name.replaceAll("_", " "),
+                    style: appTextStyle.kBMediumSemiBold.copyWith(
+                      color: AppColor.kGrayscaleDark100,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14, // Direct font size value
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           Padding(
@@ -42,17 +57,7 @@ class CountryInfoGrid extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  get(countries.name),
-                  style: appTextStyle.kBMediumSemiBold.copyWith(
-                    color: AppColor.kGrayscaleDark100,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14, // Direct font size value
-                  ),
-                ),
-                const SizedBox(
-                  height: 3, // Direct height value
-                ),
+                const SizedBox(height: 3),
                 Text(
                   'Common Korean Language',
                   style: appTextStyle.kBExtraSmallMedium.copyWith(
@@ -61,9 +66,7 @@ class CountryInfoGrid extends StatelessWidget {
                     fontSize: 10, // Direct font size value
                   ),
                 ),
-                const SizedBox(
-                  height: 4, // Direct height value
-                ),
+                const SizedBox(height: 4),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -79,7 +82,7 @@ class CountryInfoGrid extends StatelessWidget {
                 ),
                 SliderTheme(
                   data: SliderThemeData(
-                    trackHeight: 10, // Direct height value
+                    trackHeight: 2, // Direct height value
                     trackShape: CustomTrackShape(),
                   ),
                   child: Slider(

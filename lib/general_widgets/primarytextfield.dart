@@ -22,6 +22,7 @@ class PrimaryTextFormField extends StatelessWidget {
       this.inputFormatters,
       this.maxLines,
       this.borderRadius});
+
   final BorderRadiusGeometry? borderRadius;
 
   final String hintText;
@@ -36,6 +37,7 @@ class PrimaryTextFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final AppTextStyle _appTextStyle = AppTextStyle();
   final int? maxLines;
+
   @override
   Widget build(BuildContext context) {
     InputBorder enabledBorder = InputBorder.none;
@@ -46,10 +48,11 @@ class PrimaryTextFormField extends StatelessWidget {
     return Container(
       width: width,
       height: height,
+      clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
           borderRadius: borderRadius,
           color: AppColor.kBackground,
-          border: Border.all(color: AppColor.kLine)),
+          border: Border.all(color: Colors.white)),
       child: TextFormField(
         controller: controller,
         maxLines: maxLines,
@@ -58,14 +61,11 @@ class PrimaryTextFormField extends StatelessWidget {
           color: AppColor.kGrayscaleDark100,
         ),
         decoration: InputDecoration(
-          contentPadding:
-              EdgeInsets.symmetric(horizontal: 16.w, vertical: 15.h),
+          contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 15.h),
           filled: true,
           hintText: hintText,
-          hintStyle: _appTextStyle.kBMediumMedium.copyWith(
-              color: AppColor.kGrayscaleDark100,
-              fontWeight: FontWeight.w600,
-              fontSize: 14.sp),
+          hintStyle:
+              Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey.withOpacity(0.6)),
           prefixIcon: prefixIcon,
           prefixIconColor: prefixIconColor,
           enabledBorder: enabledBorder,
